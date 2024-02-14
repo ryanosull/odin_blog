@@ -1,16 +1,13 @@
-# fly.toml app configuration file generated for blog-odin on 2024-02-13T16:23:12-06:00
+# fly.toml app configuration file generated for blog7 on 2024-02-14T14:32:56-06:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'blog-odin'
+app = 'blog7'
 primary_region = 'dfw'
 console_command = '/rails/bin/rails console'
 
 [build]
-
-[deploy]
-  release_command = './bin/rails db:prepare'
 
 [http_service]
   internal_port = 3000
@@ -36,9 +33,9 @@ console_command = '/rails/bin/rails console'
       X-Forwarded-Proto = 'https'
 
 [[vm]]
+  memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 1024
 
 [[statics]]
   guest_path = '/rails/public'
